@@ -33,7 +33,8 @@
         android:fontFamily="@font/fugaz_one"
         android:lineSpacingExtra="-5dp"
         android:text="Movie Title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#202020" />
 
     <TextView
         android:id="@+id/tvOverview"
@@ -48,7 +49,8 @@
         android:layout_marginEnd="14dp"
         android:layout_marginRight="14dp"
         android:fontFamily="@font/roboto_light"
-        android:text="Movie overview and synopsis" />
+        android:text="Movie overview and synopsis"
+        android:textColor="#ffffff"/>
 
     <View
         android:layout_width="match_parent"
