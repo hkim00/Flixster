@@ -69,13 +69,29 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         // build url for poster image
         String imageUrl = config.getImageUrl(config.getPosterSize(), movie.getPosterPath());
 
-        // load image using glide
-        Glide.with(context)
-                .load(imageUrl)
-                .bitmapTransform(new RoundedCornersTransformation(context, 25, 0))
-                .placeholder(R.drawable.flicks_movie_placeholder)
-                .error(R.drawable.flicks_movie_placeholder)
-                .into(holder.ivBackdropImage);
+        boolean orientation = context.getResources().getBoolean(R.bool.isLandscape);
+
+        if (orientation) {
+            // load image using glide
+            Glide.with(context)
+                    .load(imageUrl)
+                    .bitmapTransform(new RoundedCornersTransformation(context, 25, 0))
+                    .placeholder(R.drawable.flicks_movie_placeholder)
+                    .error(R.drawable.flicks_movie_placeholder)
+                    .into(holder.ivBackdropImage);
+
+        } else {
+            // load image using glide
+            Glide.with(context)
+                    .load(imageUrl)
+                    .bitmapTransform(new RoundedCornersTransformation(context, 25, 0))
+                    .placeholder(R.drawable.flicks_movie_placeholder)
+                    .error(R.drawable.flicks_movie_placeholder)
+                    .into(holder.ivPosterImage);
+
+        }
+
+
     }
 
     // returns the total number of items in the list
